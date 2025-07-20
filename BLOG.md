@@ -145,11 +145,14 @@ That scoring + filtering is where `lgaalves/gpt2-dolly` plays a central role.
 
 The full stack looks like this:
 
-* **LLM**: `openai/gpt-4o`
-* **Agent Framework**: `pydantic-ai` with tool-based orchestration
-* **Prompt Compression**: `LLMLingua` with `gpt2-dolly`
-* **Retriever**: `pypdf`-based `PdfRetriever` class
-* **Async Execution**: `asyncio` with lightweight task runners
+| Component            | Tool or Library                     |
+| -------------------- | ----------------------------------- |
+| Large Language Model | `openai/gpt-4o`                     |
+| Agent Framework      | `pydantic-ai` with async tools      |
+| Compression Engine   | `llmlingua` + `gpt2-dolly`          |
+| Document Retrieval   | Custom `PdfRetriever` using `pypdf` |
+| Task Management      | `asyncio` for concurrent workflows  |
+
 
 All of it is open-source and production-ready.
 
